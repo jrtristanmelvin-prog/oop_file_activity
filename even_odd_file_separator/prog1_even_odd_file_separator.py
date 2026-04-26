@@ -1,6 +1,6 @@
 class NumberSeparator:
     def __init__(self):
-        self.numbers_file = "numbers.txt"
+        self.numbers_file = "even_odd_file_separator/numbers.txt"
         self.even_file = "even.txt"
         self.odd_file = "odd.txt"
 
