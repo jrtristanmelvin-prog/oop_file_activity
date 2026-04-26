@@ -16,18 +16,17 @@ class NumberSeparator:
                 number = int(num)
 
                 if number % 2 == 0:
-                    even_numbers.append(str(number))
+                    even_numbers.append(number)
                 else:
-                    odd_numbers.append(str(number))
+                    odd_numbers.append(number)
 
             even_numbers.sort()
             odd_numbers.sort()
 
             with open(self.even_file, "w") as even:
-                even.write("\n".join(even_numbers))
-
+                even.write("\n".join(map(str, even_numbers)))
             with open(self.odd_file, "w") as odd:
-                odd.write("\n".join(odd_numbers))
+                odd.write("\n".join(map(str, odd_numbers)))
 
             print("Even numbers saved in even.txt")
             print("Odd numbers saved in odd.txt")
