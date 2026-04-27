@@ -1,6 +1,6 @@
-class StudentGWA:
+class StudentGwa:
     def __init__(self):
-        self.file_name = "students.txt"
+        self.file_name = "highest_gwa_result/students.txt"
 
     def highest_gwa(self):
         try:
@@ -24,5 +24,5 @@ class StudentGWA:
         except FileNotFoundError:
             print("students.txt file not found.")
 
-obj = StudentGWA()
+obj = StudentGwa()
 obj.highest_gwa()
