@@ -17,3 +17,12 @@ class StudentGWA:
                 if gwa < highest_gwa:
                     highest_gwa = gwa
                     highest_name = name
+
+            print("Student with highest GWA:")
+            print(highest_name, "-", highest_gwa)
+
+        except FileNotFoundError:
+            print("students.txt file not found.")
+
+obj = StudentGWA()
+obj.highest_gwa()
