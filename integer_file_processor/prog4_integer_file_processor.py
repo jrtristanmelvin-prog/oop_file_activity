@@ -23,3 +23,10 @@ class IntegerProcessor:
                 odd_cubes.append(str(n ** 3))     # cube of odd numbers
 
         return even_squares, odd_cubes
+    
+    def write_files(self, even_squares, odd_cubes):
+        with open(self.double_file, "w") as file:
+            file.write("\n".join(even_squares))
+
+        with open(self.triple_file, "w") as file:
+            file.write("\n".join(odd_cubes))
