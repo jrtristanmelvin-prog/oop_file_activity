@@ -2,7 +2,7 @@ class JournalWriter:
     def __init__(self):
         self.file_name = "mylife.txt"
 
-        def write_lines(self):
+    def write_lines(self):
         with open(self.file_name, "a") as file:
             while True:
                 line = input("Enter line: ")
@@ -13,3 +13,6 @@ class JournalWriter:
                 if more == "n":
                     print("Lines have been added to mylife.txt")
                     break
+
+writer = JournalWriter()
+writer.write_lines()
