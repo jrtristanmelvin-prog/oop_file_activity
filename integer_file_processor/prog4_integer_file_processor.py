@@ -40,3 +40,6 @@ class IntegerProcessor:
             print("Error: integers.txt file not found.")
         except ValueError:
             print("Error: make sure all values in the file are integers.")
+
+processor = IntegerProcessor()
+processor.execute()
