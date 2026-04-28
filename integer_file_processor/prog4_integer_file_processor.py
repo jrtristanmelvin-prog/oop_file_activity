@@ -30,3 +30,13 @@ class IntegerProcessor:
 
         with open(self.triple_file, "w") as file:
             file.write("\n".join(odd_cubes))
+
+    def execute(self):
+        try:
+            even_squares, odd_cubes = self.process_numbers()
+            self.write_files(even_squares, odd_cubes)
+            print("Processing complete. Files created successfully.")
+        except FileNotFoundError:
+            print("Error: integers.txt file not found.")
+        except ValueError:
+            print("Error: make sure all values in the file are integers.")
