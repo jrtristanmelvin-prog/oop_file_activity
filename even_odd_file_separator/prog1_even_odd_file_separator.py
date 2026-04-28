@@ -1,8 +1,14 @@
+import os
+
 class NumberSeparator:
     def __init__(self):
-        self.numbers_file = "even_odd_file_separator/numbers.txt"
-        self.even_file = "even.txt"
-        self.odd_file = "odd.txt"
+        self.folder = "even_odd_file_separator"
+        self.numbers_file = os.path.join(self.folder, "numbers.txt")
+        self.even_file = os.path.join(self.folder, "even.txt")
+        self.odd_file = os.path.join(self.folder, "odd.txt")
+
+        # Ensure the folder exists
+        os.makedirs(self.folder, exist_ok=True)
 
     def separate_numbers(self):
         try:
@@ -14,7 +20,6 @@ class NumberSeparator:
 
             for num in numbers:
                 number = int(num)
-
                 if number % 2 == 0:
                     even_numbers.append(number)
                 else:
@@ -25,11 +30,12 @@ class NumberSeparator:
 
             with open(self.even_file, "w") as even:
                 even.write("\n".join(map(str, even_numbers)))
+
             with open(self.odd_file, "w") as odd:
                 odd.write("\n".join(map(str, odd_numbers)))
 
-            print("Even numbers saved in even.txt")
-            print("Odd numbers saved in odd.txt")
+            print(f"Even numbers saved in {self.even_file}")
+            print(f"Odd numbers saved in {self.odd_file}")
 
         except FileNotFoundError:
             print("numbers.txt file not found.")
